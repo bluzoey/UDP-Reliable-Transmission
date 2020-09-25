@@ -56,11 +56,14 @@ public class Server {
                         send.endThread(true);
                         break;
                     } else if (groupQuantity != 0) {
+                        /*
                         try {
                             send.setdestIp(InetAddress.getLocalHost());
                         }catch (UnknownHostException ue){
                             ue.printStackTrace();
                         }
+                         */
+                        send.setdestIp(serverSocket.getInetAddress());
                         send.initNumberList(groupQuantity);
                         send.setSend(true);
                     }
